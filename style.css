@@ -1,0 +1,383 @@
+/* --- style.css (final version with full responsive and projects section support) --- */
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --background-color: #101824;
+  --hover-colors: #0ef;
+  --text-origin-color: #fefefe;
+  --secondary-bg-color: #323946;
+  --main-text-color: #fefffe;
+  --main-text-second-color: #caceca;
+  --profession-color: rgb(231, 122, 122);
+}
+
+body {
+  background: var(--background-color);
+  color: aliceblue;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 14px 5%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: 0.3s;
+}
+
+.header.sticky {
+  background-color: #17243b;
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.logo span {
+  display: inline-block;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+.navbar a {
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--hover-colors);
+}
+
+#menu-icons {
+  font-size: 2.5rem;
+  color: #fefefe;
+  cursor: pointer;
+  display: none;
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+
+/* Home */
+.home {
+  background: url('image/p02.jpg') no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0 9%;
+}
+
+.home-content {
+  max-width: 600px;
+}
+
+.home-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.home-content h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: aqua;
+}
+
+.home-content p {
+  font-size: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.btn-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-box .btn {
+  padding: 12px 20px;
+  border: 2px solid var(--hover-colors);
+  background: transparent;
+  color: var(--hover-colors);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-box .btn:hover {
+  background-color: var(--hover-colors);
+  color: #000;
+}
+
+.social-media {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-media a {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--hover-colors);
+  border-radius: 50%;
+  color: var(--hover-colors);
+  transition: 0.3s;
+}
+
+.social-media a:hover {
+  background-color: var(--hover-colors);
+  color: #000;
+}
+
+/* About */
+.about {
+  background: var(--secondary-bg-color);
+  padding-bottom: 6rem;
+  text-align: center;
+}
+
+.about-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border: 2px solid var(--hover-colors);
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  font-size: 1rem;
+}
+
+/* Education */
+.education {
+  padding-bottom: 8rem;
+}
+
+.education-row {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.education-column {
+  flex: 1 1 45%;
+}
+
+.education-box {
+  border-left: 3px solid var(--hover-colors);
+  padding-left: 20px;
+}
+
+.education-content {
+  margin-bottom: 2rem;
+}
+
+.education-content .year {
+  color: var(--hover-colors);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.education-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Projects Section */
+.projects {
+  padding: 6rem 2rem;
+  background: #1c1c2c;
+  color: white;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #2a2a3d;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.project-links a {
+  display: inline-block;
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  background: var(--hover-colors);
+  color: #000;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.project-links a:hover {
+  background: #0bc7ff;
+}
+
+/* Contact */
+.contact {
+  padding-bottom: 7rem;
+  background: url('/image/p05.jpg');
+  background-size: cover;
+}
+
+.contact form {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.input-box {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.input-field {
+  flex: 1 1 45%;
+}
+
+.input-field input,
+.textarea-field textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.textarea-field {
+  flex: 1 1 100%;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 5%;
+  background: url('image/p4.jpg') no-repeat;
+  background-size: cover;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-txt p {
+  font-size: 1rem;
+}
+
+.footer-iconTop a {
+  background: var(--secondary-bg-color);
+  padding: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-iconTop a i {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+  .home-content {
+    text-align: center;
+  }
+  .btn-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .education-row {
+    flex-direction: column;
+  }
+  .input-box {
+    flex-direction: column;
+  }
+  .input-field,
+  .textarea-field {
+    width: 100%;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes flip {
+  0%, 80% {
+    transform: rotateY(360deg);
+  }
+}

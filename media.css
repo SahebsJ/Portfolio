@@ -1,0 +1,199 @@
+/* --- media.css (updated) --- */
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 95%;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 1.5rem 4%;
+  }
+
+  section {
+    padding: 8rem 4% 2rem;
+  }
+
+  .home {
+    padding: 0 4%;
+  }
+
+  .footer {
+    padding: 2rem 4%;
+  }
+}
+
+@media (max-width: 823px) {
+  #menu-icons {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    padding: 1rem 4%;
+    background-color: #4fc7cf;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: 0.25s ease;
+  }
+
+  .navbar.active {
+    left: 0;
+  }
+
+  .navbar .active-nav {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #142a46;
+    transition: 0.25s;
+    z-index: -1;
+  }
+
+  .navbar.active .active-nav {
+    left: 0;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    transform: translateX(-20rem);
+    transition: 0.3s ease;
+  }
+
+  .navbar.active a {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 520px) {
+  html {
+    font-size: 85%;
+  }
+
+  .home-content h1 {
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-box .btn {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .social-media {
+    justify-content: center;
+  }
+
+  .education {
+    padding: 5rem 4% 2rem;
+  }
+}
+
+@media (max-width: 462px) {
+  .contact form .input-box .input-field {
+    width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer p {
+    text-align: center;
+  }
+
+  .main-text h2 {
+    font-size: 1.8rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 371px) {
+  .home {
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .btn-box {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-box .btn {
+    font-size: 0.9rem;
+    width: 80%;
+    margin: 0.5rem auto;
+  }
+
+  .home-content h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* --- Responsive Projects Section --- */
+.projects {
+  padding: 6rem 2rem;
+  background: #1c1c2c;
+  color: white;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #2a2a3d;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.project-links a {
+  display: inline-block;
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  background: var(--hover-colors);
+  color: #000;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.project-links a:hover {
+  background: #0bc7ff;
+}
