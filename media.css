@@ -1,11 +1,13 @@
-/* --- media.css (upgraded for new design) --- */
+/* --- media.css (clean & theme-compatible) --- */
 
+/* Large screens */
 @media (max-width: 1200px) {
   html {
     font-size: 95%;
   }
 }
 
+/* Tablets */
 @media (max-width: 991px) {
   .header {
     padding: 1.5rem 4%;
@@ -24,9 +26,13 @@
   }
 }
 
+/* Navbar collapse (tablets & mobiles) */
 @media (max-width: 823px) {
   #menu-icons {
     display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--hover-colors);
   }
 
   .navbar {
@@ -35,10 +41,11 @@
     left: -100%;
     width: 100%;
     padding: 1rem 4%;
-    background-color: #4fc7cf;
+    background-color: var(--secondary-bg-color);
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 99;
     transition: 0.25s ease;
+    border-radius: 0 0 10px 10px;
   }
 
   .navbar.active {
@@ -51,7 +58,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: #142a46;
+    background: var(--background-color);
     transition: 0.25s;
     z-index: -1;
   }
@@ -62,8 +69,8 @@
 
   .navbar a {
     display: block;
-    font-size: 1.5rem;
-    margin: 2rem 0;
+    font-size: 1.3rem;
+    margin: 1.5rem 0;
     transform: translateX(-20rem);
     transition: 0.3s ease;
   }
@@ -73,23 +80,30 @@
   }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
   .home-content h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .home-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .about-img {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
+  }
+
+  .btn-box {
+    flex-direction: column;
+    gap: 10px;
   }
 
   .btn-box .btn {
     width: 100%;
     font-size: 1rem;
+    padding: 12px;
   }
 
   .social-media {
@@ -110,6 +124,7 @@
   }
 }
 
+/* Small mobiles */
 @media (max-width: 462px) {
   .contact form .input-box .input-field {
     width: 100%;
@@ -130,6 +145,7 @@
   }
 }
 
+/* Extra small devices */
 @media (max-width: 371px) {
   .home {
     justify-content: center;
@@ -149,6 +165,14 @@
   }
 
   .home-content h1 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .home-content h3 {
+    font-size: 1rem;
+  }
+
+  .footer-iconTop a {
+    font-size: 1.2rem;
   }
 }
