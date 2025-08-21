@@ -1,4 +1,4 @@
-/* --- style.css (final version with full responsive and projects section support) --- */
+/* --- style.css upgraded with progress bars, project thumbnails, contact form --- */
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -45,17 +45,10 @@ body {
 }
 
 .logo {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #fff;
-  text-decoration: none;
   font-weight: 600;
-}
-
-.logo span {
-  display: inline-block;
-  text-transform: uppercase;
-  animation: flip 2s infinite;
-  animation-delay: calc(0.1s * var(--i));
+  text-decoration: none;
 }
 
 .navbar a {
@@ -86,15 +79,16 @@ section {
 
 /* Home */
 .home {
-  background: url('image/p02.jpg') no-repeat;
-  background-size: cover;
+  background: url('image/p02.jpg') no-repeat center center/cover;
   display: flex;
   align-items: center;
   padding: 0 9%;
+  text-align: center;
+  flex-direction: column;
 }
 
 .home-content {
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .home-content h1 {
@@ -108,15 +102,27 @@ section {
   color: aqua;
 }
 
-.home-content p {
-  font-size: 1rem;
-  margin: 1rem 0 2rem;
+.about-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: 1rem auto 2rem;
+  overflow: hidden;
+  border: 3px solid var(--hover-colors);
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .btn-box {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .btn-box .btn {
@@ -138,6 +144,7 @@ section {
   margin-top: 2rem;
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 
 .social-media a {
@@ -155,38 +162,6 @@ section {
 .social-media a:hover {
   background-color: var(--hover-colors);
   color: #000;
-}
-
-/* About */
-.about {
-  background: var(--secondary-bg-color);
-  padding-bottom: 6rem;
-  text-align: center;
-}
-
-.about-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin: auto;
-  overflow: hidden;
-  margin-bottom: 2rem;
-  border: 2px solid var(--hover-colors);
-}
-
-.about-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.about-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.about-content p {
-  font-size: 1rem;
 }
 
 /* Education */
@@ -219,10 +194,11 @@ section {
   margin-bottom: 0.5rem;
 }
 
-.education-content h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
+/* Skills */
+.skill-bar { margin-bottom: 1rem; }
+.skill-bar span { font-weight: 600; display: block; margin-bottom: 0.3rem; }
+.bar { background: #2a2a3d; border-radius: 5px; height: 8px; }
+.progress { background: #0ef; height: 100%; border-radius: 5px; }
 
 /* Projects Section */
 .projects {
@@ -230,11 +206,6 @@ section {
   background: #1c1c2c;
   color: white;
   text-align: center;
-}
-
-.projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
 }
 
 .project-grid {
@@ -254,15 +225,23 @@ section {
   transform: translateY(-5px);
 }
 
-.project-title {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+.project-thumb {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1rem;
 }
 
-.project-description {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin-bottom: 1rem;
+.project-title { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.project-description { font-size: 0.9rem; color: #ccc; margin-bottom: 1rem; }
+
+.tech-stack span {
+  display: inline-block;
+  background: var(--hover-colors);
+  color: #000;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin: 0.2rem;
 }
 
 .project-links a {
@@ -277,15 +256,14 @@ section {
   transition: background 0.3s;
 }
 
-.project-links a:hover {
-  background: #0bc7ff;
-}
+.project-links a:hover { background: #0bc7ff; }
 
 /* Contact */
 .contact {
-  padding-bottom: 7rem;
-  background: url('/image/p05.jpg');
-  background-size: cover;
+  padding: 5rem 2rem;
+  background: #17243b;
+  color: #fff;
+  text-align: center;
 }
 
 .contact form {
@@ -318,6 +296,7 @@ section {
 
 .textarea-field {
   flex: 1 1 100%;
+  margin-bottom: 1rem;
 }
 
 /* Footer */
@@ -325,16 +304,12 @@ section {
   display: flex;
   justify-content: space-between;
   padding: 2rem 5%;
-  background: url('image/p4.jpg') no-repeat;
-  background-size: cover;
+  background: #0e1724;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.footer-txt p {
-  font-size: 1rem;
-}
-
+.footer-txt p { font-size: 1rem; }
 .footer-iconTop a {
   background: var(--secondary-bg-color);
   padding: 0.5rem;
@@ -343,41 +318,12 @@ section {
   align-items: center;
   justify-content: center;
 }
-
-.footer-iconTop a i {
-  color: #fff;
-  font-size: 1.5rem;
-}
+.footer-iconTop a i { color: #fff; font-size: 1.5rem; }
 
 /* Responsive */
 @media (max-width: 768px) {
-  html {
-    font-size: 90%;
-  }
-  .home-content {
-    text-align: center;
-  }
-  .btn-box {
-    flex-direction: column;
-    align-items: center;
-  }
-  .education-row {
-    flex-direction: column;
-  }
-  .input-box {
-    flex-direction: column;
-  }
-  .input-field,
-  .textarea-field {
-    width: 100%;
-  }
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@keyframes flip {
-  0%, 80% {
-    transform: rotateY(360deg);
-  }
+  html { font-size: 90%; }
+  .education-row { flex-direction: column; }
+  .btn-box { flex-direction: column; }
+  .project-grid { grid-template-columns: 1fr; }
 }

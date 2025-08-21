@@ -1,4 +1,4 @@
-/* --- media.css (updated) --- */
+/* --- media.css (upgraded for new design) --- */
 
 @media (max-width: 1200px) {
   html {
@@ -73,19 +73,22 @@
   }
 }
 
-@media (max-width: 520px) {
-  html {
-    font-size: 85%;
+@media (max-width: 600px) {
+  .home-content h1 {
+    font-size: 2.2rem;
   }
 
-  .home-content h1 {
-    font-size: 2.5rem;
-    display: flex;
-    flex-direction: column;
+  .home-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .about-img {
+    width: 140px;
+    height: 140px;
   }
 
   .btn-box .btn {
-    width: 90%;
+    width: 100%;
     font-size: 1rem;
   }
 
@@ -93,8 +96,17 @@
     justify-content: center;
   }
 
-  .education {
-    padding: 5rem 4% 2rem;
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-thumb {
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  .contact form {
+    padding: 0 1rem;
   }
 }
 
@@ -110,11 +122,11 @@
 
   .footer p {
     text-align: center;
+    margin-top: 1rem;
   }
 
-  .main-text h2 {
-    font-size: 1.8rem;
-    padding: 1rem;
+  .project-title {
+    font-size: 1.1rem;
   }
 }
 
@@ -137,63 +149,6 @@
   }
 
   .home-content h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
-}
-
-/* --- Responsive Projects Section --- */
-.projects {
-  padding: 6rem 2rem;
-  background: #1c1c2c;
-  color: white;
-  text-align: center;
-}
-
-.projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.project-card {
-  background: #2a2a3d;
-  border-radius: 10px;
-  padding: 1.5rem;
-  transition: transform 0.3s;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.project-title {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.project-description {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin-bottom: 1rem;
-}
-
-.project-links a {
-  display: inline-block;
-  margin: 0.3rem;
-  padding: 0.5rem 1rem;
-  background: var(--hover-colors);
-  color: #000;
-  border-radius: 5px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.project-links a:hover {
-  background: #0bc7ff;
 }
